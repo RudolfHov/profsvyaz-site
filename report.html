@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отчет о реализации проекта — Назейкин А.Г.</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['Georgia', 'serif'], 
+                        sans: ['"Inter"', 'sans-serif'], 
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @keyframes countUp {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .animate-price {
+            animation: countUp 1s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-900 bg-white overflow-x-hidden">
+
+    <header class="sticky top-0 z-50 bg-[#010B1A]/95 backdrop-blur-sm text-white shadow-lg border-b border-[#B8975E]/20">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <img src="ProfSvyazy_Logo_RGB 1.png" alt="Герб Профсоюза связи" class="w-10 h-10 object-contain" />
+                <div class="text-lg md:text-xl font-serif tracking-tight font-bold whitespace-nowrap">
+                    <span class="text-[#B8975E]">Назейкин</span> А.Г. <span class="text-gray-400 font-sans text-sm ml-2">| Цифровой отчет</span>
+                </div>
+            </div>
+            <a href="index.html" class="text-sm font-medium text-[#B8975E] hover:text-white transition-colors font-sans">Вернуться на сайт</a>
+        </div>
+    </header>
+
+    <section class="relative min-h-[calc(100vh-73px)] flex items-center py-20 px-6 overflow-hidden bg-[#010B1A] text-white">
+        <div class="absolute inset-0 z-0">
+            <img src="report_hero.png" alt="" class="w-full h-full object-cover opacity-30">
+        </div>
+
+        <div class="container mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10 reveal active">
+            <div class="space-y-6 md:space-y-8 text-center lg:text-left">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif leading-tight text-white font-bold tracking-tight">
+                    <span class="text-[#B8975E]">Презентация</span><br>веб-платформы
+                </h1>
+                <h2 class="text-xl md:text-2xl text-gray-300 font-serif italic">Персональный сайт Председателя Профсоюза работников связи России</h2>
+                <p class="text-base md:text-lg text-gray-200 leading-relaxed border-l-4 border-[#B8975E] pl-6 mx-auto lg:mx-0 font-sans text-left">
+                    Проект реализован на чистом коде без конструкторов, обеспечивая максимальную скорость, автономность и безопасность.
+                </p>
+            </div>
+            
+            <div class="flex justify-center lg:justify-end">
+                <div class="relative w-full max-w-xs md:max-w-md lg:max-w-full group">
+                    <div class="absolute -inset-4 border-2 border-[#B8975E] rounded-lg opacity-20 group-hover:opacity-100 transition-opacity duration-700"></div>
+                    <img src="report_hero.png" alt="Сайт в кабинете руководителя" class="relative z-10 w-full h-auto rounded-lg shadow-2xl transition-all duration-700 group-hover:scale-105">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 px-6 bg-slate-50 border-y border-gray-100">
+        <div class="container mx-auto max-w-6xl reveal">
+            <div class="bg-white p-6 md:p-10 rounded-xl border border-[#B8975E]/20 shadow-lg relative overflow-hidden">
+                
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h3 class="text-3xl md:text-4xl font-serif text-[#010B1A] font-bold mb-4">Техническое превосходство и адаптация</h3>
+                    <p class="text-gray-600 font-sans text-base">Сайт идеально отображается на любых устройствах, обеспечивая комфортное чтение и навигацию.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+                    <div class="space-y-6 text-center lg:text-left lg:max-w-md">
+                        <div class="bg-slate-50 p-5 rounded-lg border border-gray-100 shadow-sm">
+                            <h4 class="font-serif font-bold text-[#010B1A] text-lg mb-2">Мобильная версия</h4>
+                            <p class="text-gray-600 text-sm font-sans leading-relaxed">Безупречное отображение контента на смартфонах. Все элементы (текст, фото, навигация) адаптируются автоматически, сохраняя структуру и читаемость.</p>
+                        </div>
+                        <div class="bg-slate-50 p-5 rounded-lg border border-gray-100 shadow-sm">
+                            <h4 class="font-serif font-bold text-[#010B1A] text-lg mb-2">Автономность и скорость</h4>
+                            <p class="text-gray-600 text-sm font-sans leading-relaxed">Использование чистого кода обеспечивает мгновенную загрузку страниц. Нет зависимости от конструкторов, что исключает абонентскую плату.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center lg:justify-end">
+                        <div class="relative w-full max-w-xs md:max-w-md lg:max-w-full group">
+                            <div class="absolute -inset-4 border-2 border-[#B8975E] rounded-lg opacity-20 group-hover:opacity-100 transition-opacity duration-700"></div>
+                            <img src="report_mobile.png" alt="Сайт на экране смартфона" class="relative z-10 w-full h-auto rounded-lg shadow-xl transition-all duration-700 group-hover:scale-105">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-10 pt-6 border-t border-gray-100 flex items-center justify-center gap-3 text-sm text-[#010B1A] font-medium font-sans">
+                    <i class="fas fa-check-circle text-[#B8975E] text-lg"></i>Проект сдан и готов к эксплуатации.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 md:py-32 px-6 bg-white">
+        <div class="container mx-auto max-w-5xl text-center reveal">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h3 class="text-3xl md:text-4xl font-serif text-[#010B1A] font-bold mb-4 relative after:content-[''] after:block after:w-16 after:h-1 after:bg-[#B8975E] after:mx-auto after:mt-4">Стоимость Реализации</h3>
+                <p class="text-gray-600 font-sans text-base pt-2">Комплексный проект «под ключ» бизнес-класса, включающий индивидуальный дизайн, разработку на чистом коде, адаптацию и наполнение контентом.</p>
+            </div>
+
+            <div class="bg-[#010B1A] p-12 md:p-16 rounded-xl border border-[#B8975E]/20 shadow-2xl relative overflow-hidden inline-block animate-price">
+                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-[#B8975E]/10 to-transparent opacity-50"></div>
+                
+                <p class="text-sm uppercase tracking-wider text-[#B8975E] font-bold font-sans mb-3 z-10 relative">Итого к оплате:</p>
+                <div class="text-5xl md:text-7xl font-serif font-bold text-white z-10 relative">
+                    300 000 <span class="text-4xl md:text-5xl text-[#B8975E]">₽</span>
+                </div>
+            </div>
+
+            <p class="text-gray-500 text-sm mt-10 font-sans">Включает: Дизайн, Верстку, Программирование, Оптимизацию контента, Размещение на хостинге.</p>
+        </div>
+    </section>
+
+    <footer class="py-12 md:py-16 px-6 bg-[#010B1A] text-white border-t border-[#B8975E]/20">
+        <div class="container mx-auto text-center text-gray-500 text-xs md:text-sm font-sans">
+            <p>&copy; 2026 Профсоюз работников связи России. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('active');
+                });
+            }, { threshold: 0.1 });
+
+            reveals.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
