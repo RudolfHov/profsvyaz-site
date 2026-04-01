@@ -11,13 +11,13 @@ const SITE_DATA = {
         { value: "500", suffix: " тыс.", description: "членов профсоюза", icon: "fas fa-users" },
         { value: "120", suffix: " лет", description: "профсоюзному движению", icon: "fas fa-history" },
         { value: "80", suffix: "+", description: "территориальных организаций", icon: "fas fa-map-marker-alt" },
-        { value: "95", suffix: "%", description: "охват колдоговорами", icon: "fas fa-file-contract" }
+        { value: "95", suffix: "%", description: "охват колдоговорами", icon: "fas fa-file-contract" } // Наша цифра
     ],
     timeline: [
-        { year: "1968", event: "Начало трудовой деятельности", description: "Трудовой путь начал электромонтером в Смоленской области" },
-        { year: "1978", event: "Переход на профсоюзную работу", description: "Избран председателем профкома Московского почтамта" },
-        { year: "1990", event: "Председатель Профсоюза", description: "Избран главой Профсоюза работников связи России" },
-        { year: "2025", event: "Очередной съезд Профсоюза", description: "Подтверждение полномочий и стратегия развития до 2030 года" }
+        { year: "1946", event: "Дата рождения", description: "Родился 12 января в городе Похвистнево." },
+        { year: "1978", event: "Переход на профсоюзную работу", description: "Избран председателем профкома Московского почтамта." },
+        { year: "1990", event: "Председатель Профсоюза", description: "Избран главой Профсоюза работников связи России." },
+        { year: "2025", event: "Очередной съезд Профсоюза", description: "Подтверждение полномочий и стратегия развития до 2030 года." }
     ],
     activities: [
         { title: "Защита прав", description: "Представление интересов работников в трудовых конфликтах и при разработке отраслевых законов.", icon: "fas fa-shield-alt" },
@@ -38,7 +38,6 @@ const SITE_DATA = {
         { title: "В Москве состоялся III Всероссийский форум трудящихся женщин", date: "17.03.2026", summary: "ГК «Измайлово» стал точкой притяжения для активных женщин из профсоюзов.", img: "news_women_forum.jpg" },
         { title: "Молодежь за учебу!", date: "17.03.2026", summary: "Активисты Калининградской профсоюзной организации работников почты.", img: "news_kaliningrad_study.jpg" }
     ],
-    // ТЕПЕРЬ ТУТ ИСПОЛЬЗУЮТСЯ ВАШИ КРАСИВЫЕ НАЗВАНИЯ
     gallery: [
         { img: "news_rtrs.jpg", alt: "Подписание коллективного договора РТРС", category: "events" },
         { img: "news_kazan_masters.jpg", alt: "Конкурс профессионального мастерства в Казани", category: "events" },
@@ -74,17 +73,14 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function initContent() {
-    // Десктопная навигация
     document.getElementById("nav-items").innerHTML = SITE_DATA.navigation.map(item => `
         <li><a href="${item.href}" class="hover:text-[#B8975E] transition-colors duration-300 font-medium text-xs xl:text-sm uppercase tracking-wider">${item.label}</a></li>
     `).join("");
 
-    // Мобильная навигация
     document.getElementById("mobile-nav-items").innerHTML = SITE_DATA.navigation.map(item => `
         <li><a href="${item.href}" class="block py-2 px-4 hover:bg-[#B8975E]/10 hover:text-[#B8975E] transition-colors duration-300 font-medium text-sm uppercase tracking-wider mobile-link">${item.label}</a></li>
     `).join("");
 
-    // Статистика
     document.getElementById("statistics-grid").innerHTML = SITE_DATA.statistics.map(item => `
         <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center reveal">
             <div class="text-[#B8975E] mb-4"><i class="${item.icon} fa-2x"></i></div>
@@ -93,7 +89,6 @@ function initContent() {
         </div>
     `).join("");
 
-    // ТАЙМЛАЙН
     document.getElementById("timeline-list").innerHTML = SITE_DATA.timeline.map((item, index) => `
         <div class="relative pl-10 pb-12 last:pb-0 reveal">
             <div class="absolute left-[9px] top-2 bottom-0 w-0.5 bg-gradient-to-b from-[#B8975E] to-[#B8975E]/20 
@@ -103,16 +98,13 @@ function initContent() {
                 <div class="relative w-3 h-3 rounded-full bg-[#B8975E] border-2 border-white shadow-md"></div>
             </div>
             <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 -mt-1">
-                <div class="mb-3">
-                    <span class="text-xl font-serif font-bold text-[#B8975E]">${item.year}</span>
-                </div>
+                <div class="mb-3"><span class="text-xl font-serif font-bold text-[#B8975E]">${item.year}</span></div>
                 <h4 class="text-lg font-serif font-bold mb-2 text-[#010B1A]">${item.event}</h4>
                 <p class="text-gray-600 text-sm leading-relaxed font-sans">${item.description}</p>
             </div>
         </div>
     `).join("");
 
-    // Деятельность
     document.getElementById("activity-grid").innerHTML = SITE_DATA.activities.map(item => `
         <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center reveal">
             <div class="text-[#B8975E] mb-4"><i class="${item.icon} fa-3x"></i></div>
@@ -121,7 +113,6 @@ function initContent() {
         </div>
     `).join("");
 
-    // Достижения
     document.getElementById("achievements-list").innerHTML = SITE_DATA.achievements.map(item => `
         <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 reveal">
             <h4 class="text-lg font-serif font-bold mb-2 text-[#010B1A]">${item.title}</h4>
@@ -129,7 +120,6 @@ function initContent() {
         </div>
     `).join("");
 
-    // Новости
     document.getElementById("news-grid").innerHTML = SITE_DATA.news.map(item => `
         <div class="flex flex-col h-full bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden reveal">
             <div class="h-48 md:h-56 overflow-hidden">
@@ -143,7 +133,6 @@ function initContent() {
         </div>
     `).join("");
 
-    // Фильтры галереи
     const categories = ['all', ...new Set(SITE_DATA.gallery.map(i => i.category))];
     const categoryNames = { all: "Все", events: "Мероприятия", meetings: "Встречи" };
     document.getElementById("gallery-filters").innerHTML = categories.map(cat => `
@@ -152,7 +141,6 @@ function initContent() {
 
     renderGallery('all');
 
-    // Футер
     document.getElementById("footer-content").innerHTML = `
         <div>
             <h4 class="text-xl font-serif mb-6 text-[#B8975E] font-bold">Контакты</h4>
